@@ -1,0 +1,38 @@
+# Makefile for project 1 
+# Author: Chun TAO
+#student ID: 879010
+
+## CC  = Compiler.
+## CFLAGS = Compiler flags.
+CC	= gcc
+#CFLAGS =	-Wall -Wextra -std=gnu99
+
+
+## OBJ = Object files.
+## SRC = Source files.
+## EXE = Executable name.
+
+SRC =		swap.c memory.c queue.c process.c
+OBJ =		swap.o memory.o queue.o process.o
+EXE = 	swap
+
+## Top level target is executable.
+$(EXE):	$(OBJ)
+		$(CC) -o $(EXE) $(OBJ) -lm
+
+
+## Clean: Remove object files and core dump files.
+clean:
+		/bin/rm $(OBJ) 
+
+## Clobber: Performs Clean and removes executable file.
+
+clear: clean
+		/bin/rm $(EXE) 
+
+## Dependencies
+
+//swap.o:	memory.h queue.h
+//memory.o:	memory.h
+//queue.o: queue.h
+//process.o: process.h
